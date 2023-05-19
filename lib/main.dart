@@ -3,7 +3,11 @@ import 'package:esay/screens/sign_up.dart';
 import 'package:esay/screens/splash.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/bot_chat.dart';
 import 'screens/dashbord.dart';
+import 'screens/order_details.dart';
+import 'screens/orders.dart';
+import 'screens/profile.dart';
 import 'screens/select_role.dart';
 import 'screens/sign_in.dart';
 
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
       ),
-      home:   DashBord(),
+      home:   Profile(),
     );
   }
 }
