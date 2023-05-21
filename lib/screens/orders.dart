@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
+
+import 'order_details.dart';
 
 class Orders extends StatelessWidget {
   Orders({Key? key}) : super(key: key);
@@ -181,7 +184,10 @@ class Orders extends StatelessWidget {
                             )
                           ],
                         ),
-                      ),
+                      ).onTap((){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const OrderDetails()));
+
+                      }),
                   itemCount: title.length,
                 ))
           ],

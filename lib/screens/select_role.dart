@@ -1,6 +1,10 @@
+import 'package:esay/screens/sign_in_worker.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 import '../resources/assets_manager.dart';
+import 'drawer_page.dart';
+import 'sign_in.dart';
 
 class SelectRole extends StatelessWidget {
   const SelectRole({Key? key}) : super(key: key);
@@ -90,7 +94,10 @@ class SelectRole extends StatelessWidget {
                 ],
               ),
 
-              ),
+              ).onTap((){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignIn()));
+
+            }),
       ),
           const SizedBox(height: 20,),
 
@@ -161,20 +168,29 @@ class SelectRole extends StatelessWidget {
                 ],
               ),
 
-              ),
+              ).onTap((){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignInWorker()));
+
+            }),
       ),
           const SizedBox(height: 40,),
 
-          const Center(
-            child: Text(
-              'Skip and Start',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                decoration: TextDecoration.underline,
+           InkWell(
+             onTap: (){
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeDrawer()));
+
+             },
+             child: const Center(
+               child: Text(
+                'Skip and Start',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  decoration: TextDecoration.underline,
+                ),
               ),
-            ),
-          )
+             ),
+           )
 
         ]
     )));

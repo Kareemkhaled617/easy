@@ -1,11 +1,12 @@
+import 'package:esay/screens/sign_up_worker.dart';
 import 'package:flutter/material.dart';
 
 import '../component/default_botton.dart';
 import '../resources/assets_manager.dart';
 import 'sign_up.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SignInWorker extends StatelessWidget {
+  const SignInWorker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,13 @@ class SignIn extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-                   SizedBox(height: MediaQuery.of(context).size.height/7,),
-                   const Padding(
-                     padding: EdgeInsets.all(8.0),
-                     child: Image(
+                  SizedBox(height: MediaQuery.of(context).size.height/7,),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Image(
                       image: AssetImage(ImageAssets.backSignIn),
+                    ),
                   ),
-                   ),
                   SizedBox(height: MediaQuery.of(context).size.height/15,),
 
                   const Padding(
@@ -77,7 +78,7 @@ class SignIn extends StatelessWidget {
                     child: DefaultButton(
                       title: 'Sign In',
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpWorker()));
 
                       },
                     ),

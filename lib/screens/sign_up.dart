@@ -4,14 +4,17 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import '../component/DefualtTextform.dart';
 import '../component/default_botton.dart';
 import '../resources/assets_manager.dart';
+import 'drawer_page.dart';
+import 'select_role.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
+   SignUp({Key? key}) : super(key: key);
+  TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController name = TextEditingController();
-    TextEditingController email = TextEditingController();
-    TextEditingController password = TextEditingController();
+
 
     return SafeArea(
         child: Scaffold(
@@ -148,6 +151,7 @@ class SignUp extends StatelessWidget {
                     DefaultTextForm(
                       hint: 'Name',
                       onTap: () {},
+                      icon:const Icon(Icons.person),
                       controller: name,
                       type: TextInputType.text,
                     ),
@@ -156,6 +160,7 @@ class SignUp extends StatelessWidget {
                     ),
                     DefaultTextForm(
                       hint: 'email',
+                      icon:const Icon(Icons.email),
                       onTap: () {},
                       controller: email,
                       type: TextInputType.emailAddress,
@@ -165,6 +170,8 @@ class SignUp extends StatelessWidget {
                     ),
                     DefaultTextForm(
                       hint: 'Password',
+                      icon:const Icon(Icons.lock),
+
                       onTap: () {},
                       controller: password,
                       type: TextInputType.text,
@@ -176,7 +183,10 @@ class SignUp extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: DefaultButton(
                   title: 'Sign Up',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeDrawer()));
+
+                  },
                 ),
               ),
               const SizedBox(

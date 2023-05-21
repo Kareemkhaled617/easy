@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../component/default_botton.dart';
 import '../resources/assets_manager.dart';
+import 'onboardin.dart';
 
 class SplashScrean extends StatelessWidget {
   const SplashScrean({Key? key}) : super(key: key);
@@ -49,7 +50,9 @@ class SplashScrean extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: DefaultButton(
                 title: 'Get Started',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
+                },
               ),
             )
           ],

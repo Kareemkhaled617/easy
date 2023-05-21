@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'screens/elmhn.dart';
+import 'screens/home_user.dart';
 import 'screens/profile.dart';
+import 'screens/sign_up.dart';
+import 'screens/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         primarySwatch: Colors.blue,
       ),
-      home: Profile(),
+      home:  DashBordUser(),
     );
   }
 }

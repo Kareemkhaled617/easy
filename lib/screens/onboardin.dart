@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../component/custom_paint.dart';
 import '../resources/assets_manager.dart';
+import 'select_role.dart';
+import 'sign_in.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key? key}) : super(key: key);
@@ -106,7 +108,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             Row(
               children: [
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const SelectRole()));
+                    },
                     child: const Text(
                       'Skip',
                       style: TextStyle(

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 import '../component/DefualtTextform.dart';
 import '../resources/assets_manager.dart';
+import 'MLBotScreen.dart';
+import 'bot_chat.dart';
+import 'orders.dart';
+import 'profile.dart';
 
 class DashBord extends StatelessWidget {
   const DashBord({Key? key}) : super(key: key);
@@ -17,14 +22,14 @@ class DashBord extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 4.5,
+              height: MediaQuery.of(context).size.height / 7.5,
               decoration: const BoxDecoration(
                   color: Color(0xff5669ff),
                   borderRadius: BorderRadiusDirectional.only(
                       bottomEnd: Radius.circular(25),
                       bottomStart: Radius.circular(25))),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -35,7 +40,10 @@ class DashBord extends StatelessWidget {
                           child: Image(
                             image: AssetImage(ImageAssets.avatar),
                           ),
-                        ),
+                        ).onTap((){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+
+                        }),
                         Column(
                           children: [
                             Row(
@@ -61,10 +69,20 @@ class DashBord extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const Icon(Icons.line_weight_sharp)
+                        Row(
+                          children: [
+                            const Icon(Icons.chat).onTap((){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> MLBotSupportComponent()));
+
+                            }),
+
+                            const Icon(Icons.line_weight_sharp),
+                          ],
+                        )
                       ],
                     ),
                   ),
+                  5.height,
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -175,7 +193,10 @@ class DashBord extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
+                ).onTap((){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Orders()));
+
+                }),
                 Container(
                   padding: const EdgeInsetsDirectional.all(8.0),
                   margin: const EdgeInsetsDirectional.all(8),
@@ -353,7 +374,7 @@ class DashBord extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Text(
-                                'Cleaning',
+                                'Repair & \nConstruction',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   color: Colors.black,
@@ -415,7 +436,7 @@ class DashBord extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Text(
-                                'Cleaning',
+                                'Tourism & \nEntertainment',
                                 style: TextStyle(
                                   fontFamily: 'Montserrat',
                                   color: Colors.black,
@@ -447,7 +468,7 @@ class DashBord extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
                   Text(
-                    'Top Categoties',
+                    'Best Performers',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w900,

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class DefaultTextForm extends StatelessWidget {
   const DefaultTextForm(
-
-      {Key? key, required this.hint, required this.type, required this.onTap,required this.controller,
-      this.icon
-      }
-
-      )
+      {Key? key,
+      required this.hint,
+      required this.type,
+      required this.onTap,
+      required this.controller,
+      this.icon})
       : super(key: key);
   final String hint;
   final Widget? icon;
@@ -20,15 +20,17 @@ class DefaultTextForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      keyboardType:type ,
+      keyboardType: type,
       onChanged: (value) {
         //Do something with the user input.
       },
-      decoration:  InputDecoration(
-        prefixIcon:icon! ,
-        fillColor: Colors.grey.shade200, filled: true,
+      decoration: InputDecoration(
+        prefixIcon: icon!,
+        fillColor: Colors.grey.shade200,
+        filled: true,
         hintText: hint,
-        contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(16.0)),
         ),

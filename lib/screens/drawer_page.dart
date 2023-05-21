@@ -2,10 +2,13 @@ import 'package:esay/component/default_botton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:stylish_bottom_bar/model/bar_items.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 import '../resources/color_manger.dart';
+import 'dashbord.dart';
+import 'profile.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer({super.key});
@@ -66,7 +69,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 child: Image.asset(
                   'assets/images/user.png',
                 ),
-              ),
+              ).onTap((){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+
+              }),
               const Text(
                 'Ashfak Sayem',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
@@ -223,7 +229,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         appBar: AppBar(
-          title: const Text('Advanced Drawer Example'),
+          backgroundColor: ColorManager.primary,
+          elevation: 0,
           leading: IconButton(
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
@@ -244,7 +251,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           child: PageView(
             controller: controller,
             children: const [
-              Center(child: Text('Home')),
+              DashBord(),
               Center(child: Text('Star')),
               Center(child: Text('Style')),
               Center(child: Text('Profile')),
